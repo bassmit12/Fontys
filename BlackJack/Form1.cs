@@ -24,7 +24,7 @@ namespace BlackJack
             ListViewItem item;
 
 
-            //Add first item
+            //Add item
             getCard();
             arr[0] = Card.Suit[suit];
             arr[1] = Card.Rank[rank];
@@ -32,10 +32,34 @@ namespace BlackJack
             item = new ListViewItem(arr);
             listView_player.Items.Add(item);
 
-            valuePlayer = valuePlayer + Convert.ToInt16(arr[1]);
+            //count playerValue
+            
+            if (int.TryParse(arr[1], out int value))
+            {
+                valuePlayer = valuePlayer + Convert.ToInt16(arr[1]);
+            }
 
-            value_player.Text = Convert.ToString(valuePlayer);
+            else if (arr[1] == "Jack" || arr[1] == "Queen" || arr[1] =="King")
+            {
+                valuePlayer = valuePlayer + 10;
+            }
 
+            else if (arr[1] == "Ace")
+            {
+                valuePlayer = valuePlayer + 11;
+            }
+
+
+            //check if playerValue is smaller or equal to 21
+            if (valuePlayer <= 21)
+            {
+                value_player.Text = Convert.ToString(valuePlayer);
+            }
+            
+            else
+            {
+                value_player.Text = "Busted";
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -93,8 +117,6 @@ namespace BlackJack
             string[] arr = new string[3];
             ListViewItem item;
 
-            
-            
             //Add first item
             getCard();
             arr[0] = Card.Suit[suit];
@@ -103,21 +125,22 @@ namespace BlackJack
             item = new ListViewItem(arr);
             listView_dealer.Items.Add(item);
 
-            valuePlayer = valuePlayer + Convert.ToInt16(arr[1]);
+            if (int.TryParse(arr[1], out int value))
+            {
+                valueDealer = valueDealer + Convert.ToInt16(arr[1]);
+            }
 
-            value_player.Text = Convert.ToString(valuePlayer);
+            else if (arr[1] == "Jack" || arr[1] == "Queen" || arr[1] == "King")
+            {
+                valueDealer = valueDealer + 10;
+            }
 
-            //Add second item
-            getCard();
-            arr[0] = Card.Suit[suit];
-            arr[1] = Card.Rank[rank];
+            else if (arr[1] == "Ace")
+            {
+                valueDealer = valueDealer + 11;
+            }
 
-            item = new ListViewItem(arr);
-            listView_dealer.Items.Add(item);
-
-            valuePlayer = valuePlayer + Convert.ToInt16(arr[1]);
-
-            value_player.Text = Convert.ToString(valuePlayer);
+            value_dealer.Text = Convert.ToString(valueDealer);
 
         }
 
