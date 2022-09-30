@@ -5,7 +5,8 @@ namespace BlackJack
         //global variables
         private int rank;
         private int suit;
-
+        int valueDealer;
+        int valuePlayer;
 
         public Form1()
         {
@@ -22,12 +23,19 @@ namespace BlackJack
             string[] arr = new string[3];
             ListViewItem item;
 
+
             //Add first item
-            arr[0] = "Spade";
-            arr[1] = "10";
+            getCard();
+            arr[0] = Card.Suit[suit];
+            arr[1] = Card.Rank[rank];
 
             item = new ListViewItem(arr);
             listView_player.Items.Add(item);
+
+            valuePlayer = valuePlayer + Convert.ToInt16(arr[1]);
+
+            value_player.Text = Convert.ToString(valuePlayer);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -48,6 +56,8 @@ namespace BlackJack
             listView_player.Clear();
             initializeListviewPlayer();
             initializeListviewDealer();
+            valueDealer = 0;
+            valueDealer = 0;
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,44 +93,52 @@ namespace BlackJack
             string[] arr = new string[3];
             ListViewItem item;
 
+            
+            
             //Add first item
             getCard();
-            arr[0] = Card.Suit[rank];
-            arr[1] = Card.Rank[suit];
+            arr[0] = Card.Suit[suit];
+            arr[1] = Card.Rank[rank];
 
             item = new ListViewItem(arr);
             listView_dealer.Items.Add(item);
+
+            valuePlayer = valuePlayer + Convert.ToInt16(arr[1]);
+
+            value_player.Text = Convert.ToString(valuePlayer);
 
             //Add second item
-            arr[0] = Card.Suit[2];
-            arr[1] = Card.Rank[2];
+            getCard();
+            arr[0] = Card.Suit[suit];
+            arr[1] = Card.Rank[rank];
 
             item = new ListViewItem(arr);
             listView_dealer.Items.Add(item);
 
-            value_dealer.Text = arr[1];
+            valuePlayer = valuePlayer + Convert.ToInt16(arr[1]);
+
+            value_player.Text = Convert.ToString(valuePlayer);
+
         }
 
         public void getCard()
         {
             Random rnd = new Random();
             rank = rnd.Next(0, 14);  // creates a number between 0 and 13
-            suit = rnd.Next(0, 5);  // creates a number between 0 and 4
+            suit = rnd.Next(0, 4);  // creates a number between 0 and 3
         }
         private void label3_Click(object sender, EventArgs e)
         {
             //value_dealer
         }
 
+        private void value_player_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 
-    public class Card
-    {
-        public static readonly String[] Rank = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace" };
-        public static readonly String[] Suit = { "Diamond", "Clover", "Heart", "Spade" };
-      
-    }
+   
 
 }
 
