@@ -2,8 +2,11 @@ namespace BlackJack
 {
     public partial class Form1 : Form
     {
+        //global variables
         private int rank;
         private int suit;
+
+
         public Form1()
         {
             InitializeComponent();
