@@ -1,0 +1,80 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    line-height: 1.5;
+    font-family: sans-serif;
+    font-size: 62.5%;
+    color: #f4f4f4;
+    background-color: #1d1e22;
+}
+
+section {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: top;
+    font-size: 1rem;
+    height: 100vh;
+    padding-top: 10vh;
+    background-color: #1d1e22;
+
+}
+
+section h2 {
+    text-transform: uppercase;
+    font-size: 3.25rem;
+    font-weight: 900;
+    padding: 0.5em 1em;
+    color: #1d1e22;
+    background-color: #f4f4f4;
+    /* mix-blend-mode: screen; */
+    border-radius: 0.25em;
+    pointer-events: none;
+    user-select: none;
+}
+
+section p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+section select {
+    background: #f4f4f4;
+    color: #1d1e22;
+    box-shadow: none;
+    outline: none !important;
+    padding: 5px;
+    border-radius: 5px;
+
+    margin-right: 5px;
+}
+
+/* ---------------------------------------------------
+    BUTTON STYLE
+----------------------------------------------------- */
+
+.btn {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: #1d1e22;
+    color: #f4f4f4 ;
+
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    
+    margin-top: 3rem;
+}
+
+.screen_blend {
+    /* mix-blend-mode: screen; */
+}

@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Website Bas</title>
+</head>
+<body id="body">
+    <div class="smooth" onscroll="">
+        <div class="header" id="navbar">
+            <ul>
+                <li><a href="#home">BetterYou</a></li>
+                <li><a href="#about" >Bigger</a></li>
+                <li><a href="#price" >Better</a></li>
+                <li><a href="#contact">Stronger</a></li>
+            </ul>
+        </div>
+        <section id="home" class="home">
+            <h2>BetterYou</h2>
+        </section>
+
+        <section id="about" class="screen_blend" >
+            <h2>Bigger</h2>
+            <p>Get bigger using the perfect program for you</p>
+        </section>
+
+       
+            <section id="price" class="section_invert screen_blend ">
+                <h2 class="section_invert_h2">Better</h2>
+                <p class="section_invert_p">Get better then the competition</p>
+            </section>
+
+            <section id="contact" class="screen_blend">
+                <h2>Stronger</h2>
+                <p>Get stronger through weekly progression</p>
+    
+                <a type="button" class="btn btn-light" href="program.html">Find my program</a>
+            </section>
+        
+    </div>      
+    <script>
+        
+            console.log("Hello World");
+            window.onscroll = function (e) {
+            console.log(document.querySelector('.difference-element').getBoundingClientRect().bottom,document.querySelector('.white-box').getBoundingClientRect().top);
+            };
+       
+    </script>
+</body> 
+</html>
